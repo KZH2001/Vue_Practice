@@ -3,6 +3,13 @@ import {computed, ref} from 'vue';
 import stockImage from '@/assets/images/boot1.jpg';
 import stockImage1 from '@/assets/images/boot2.jpg';
 
+const props = defineProps({  
+    premium: {
+        type: Boolean,
+        required: true
+    }   
+})
+
 const product = ref("Socwerks")
 const brand = ref("Nike")
 
@@ -15,7 +22,7 @@ const variants = ref([
   {id: 13, color: "Blue",image: stockImage1, quantity: 0}
 ]);
 
-const cart = ref(0);
+
 
 const title = computed(() => {
   return product.value + '' + brand.value
@@ -31,7 +38,15 @@ const image = computed(() => {
 })
 
 const inStock  = computed(() => {
-  return variants.value[selectVariant.value].quantity
+  return variants.value[selectVariant.value].quantity > 0
+})
+
+const shipping = computed(() => {
+    if (props.premium){
+        return 'Free'
+    }else{
+        return 2.99
+    }
 })
 
 </script>
@@ -46,13 +61,14 @@ const inStock  = computed(() => {
         <h1>{{ title}}</h1>
         <p  v-if="inStock">In Stock</p>
         <p v-else>Out of Stock</p>
+        <p>Shipping</p>
         <ul>
           <li v-for="detail in details" :key="detail.id">{{ detail }}</li>
         </ul>
 
         <div 
         v-for="(variant, index) in variants"
-        :key="variant.id" 
+        :key="variant.key" 
          @mouseover="updateVariant(index)"
          class="color-circle"
         :style="{ backgroundColor: variant.color }" 
@@ -64,7 +80,7 @@ const inStock  = computed(() => {
         :disabled="!inStock" 
         v-on:click="addToCart">Add to cart</button>
       </div>
-      <div>Cart ({{cart }})</div>
+      <!-- <div>Cart ({{cart }})</div> -->
     </div>
   </div>  
 </template>
