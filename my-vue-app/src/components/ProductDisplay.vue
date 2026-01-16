@@ -2,14 +2,18 @@
 import {computed, ref} from 'vue';
 import stockImage from '@/assets/images/boot1.jpg';
 import stockImage1 from '@/assets/images/boot2.jpg';
+import ReviewForm from './ReviewForm.vue';
 
 const props = defineProps({  
-    premium: {
+    premium12: {
         type: Boolean,
-        required: true
+        required: false
     }   
 })
 
+const review = ref([])
+
+const emit = defineEmits(['add-to-cart'])
 const product = ref("Socwerks")
 const brand = ref("Nike")
 
@@ -28,7 +32,12 @@ const title = computed(() => {
   return product.value + '' + brand.value
 })
 
-const addToCart = () => cart.value += 1;
+const addToCart = () => {
+    emit('add-to-cart')
+}
+
+
+
 const updateVariant = (index) => {
   selectVariant.value = index
 }
@@ -42,12 +51,16 @@ const inStock  = computed(() => {
 })
 
 const shipping = computed(() => {
-    if (props.premium){
+    if (props.premium12){
         return 'Free'
     }else{
         return 2.99
     }
 })
+
+const addReview = (review) => {
+  review.value.push(review)
+}
 
 </script>
 
@@ -61,14 +74,14 @@ const shipping = computed(() => {
         <h1>{{ title}}</h1>
         <p  v-if="inStock">In Stock</p>
         <p v-else>Out of Stock</p>
-        <p>Shipping</p>
+        <p>Shipping : {{ shipping }}</p>
         <ul>
-          <li v-for="detail in details" :key="detail.id">{{ detail }}</li>
+          <li v-for="detail in details" :key="detail">{{ detail }}</li>
         </ul>
 
         <div 
         v-for="(variant, index) in variants"
-        :key="variant.key" 
+        :key="variant.id" 
          @mouseover="updateVariant(index)"
          class="color-circle"
         :style="{ backgroundColor: variant.color }" 
@@ -82,5 +95,7 @@ const shipping = computed(() => {
       </div>
       <!-- <div>Cart ({{cart }})</div> -->
     </div>
+
+    <ReviewForm @review-submitted="addReview"></ReviewForm>
   </div>  
 </template>
