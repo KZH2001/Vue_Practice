@@ -3,6 +3,7 @@ import {computed, ref} from 'vue';
 import stockImage from '@/assets/images/boot1.jpg';
 import stockImage1 from '@/assets/images/boot2.jpg';
 import ReviewForm from './ReviewForm.vue';
+import ReviewList from './ReviewList.vue'
 
 const props = defineProps({  
     premium12: {
@@ -11,7 +12,7 @@ const props = defineProps({
     }   
 })
 
-const review = ref([])
+const reviews = ref([])
 
 const emit = defineEmits(['add-to-cart'])
 const product = ref("Socwerks")
@@ -59,7 +60,7 @@ const shipping = computed(() => {
 })
 
 const addReview = (review) => {
-  review.value.push(review)
+  reviews.value.push(review)
 }
 
 </script>
@@ -95,7 +96,7 @@ const addReview = (review) => {
       </div>
       <!-- <div>Cart ({{cart }})</div> -->
     </div>
-
+    <ReviewList :reviews="review"></ReviewList>
     <ReviewForm @review-submitted="addReview"></ReviewForm>
   </div>  
 </template>
