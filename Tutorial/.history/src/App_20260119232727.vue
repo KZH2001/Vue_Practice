@@ -73,8 +73,8 @@
         this.number -= num
       },
 
-      submitForm(w){
-        w.preventDefault();
+      submitForm(event){
+        event.preventDefault();
         console.log("result", this.formValues)
       }
 

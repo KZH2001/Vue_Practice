@@ -14,7 +14,7 @@
   <pre>{{ JSON.stringify(formValues, null, 2) }}</pre>
 
 
-  <form action="" @submit="submitForm">
+  <form action="">
     <label for="name">Name</label>
     <input v-model="formValues.name" id="name" type="text">
     <br>
@@ -29,13 +29,7 @@
     <label for="">Remote</label>
     <input v-model="formValues.remote" type="checkbox" true-value ="Yes" false-value="No">
     <br>
-    <label for="">HTML</label>
-    <input v-model="formValues.skill" value="HTML" type="checkbox">
-
-     <label for="">CSS</label>
-    <input v-model="formValues.skill" value="CSS" type="checkbox">
-
-    <button>Submit</button>
+    <input type="text">
   </form>
   </template>
 
@@ -71,11 +65,6 @@
 
       decreaseNumber(num){
         this.number -= num
-      },
-
-      submitForm(w){
-        w.preventDefault();
-        console.log("result", this.formValues)
       }
 
     }

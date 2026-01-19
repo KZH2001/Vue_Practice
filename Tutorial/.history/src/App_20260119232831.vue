@@ -74,7 +74,7 @@
       },
 
       submitForm(w){
-        w.preventDefault();
+        q.preventDefault();
         console.log("result", this.formValues)
       }
 

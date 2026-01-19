@@ -11,31 +11,12 @@
   <button @click="decreaseNumber(1)">Decrease 1</button>
   <button @click="decreaseNumber(5)">Decrease 5</button>
 
-  <pre>{{ JSON.stringify(formValues, null, 2) }}</pre>
+  <pre>{{ JSON.stringify(formValues, null, 22) }}</pre>
 
 
-  <form action="" @submit="submitForm">
+  <form action="">
     <label for="name">Name</label>
     <input v-model="formValues.name" id="name" type="text">
-    <br>
-
-    <select name="" id="" v-model="formValues.role">
-      <option value="">Select Role</option>
-      <option value="Web">Web</option>
-      <option value="Network">Network</option>
-    </select>
-    <br>
-
-    <label for="">Remote</label>
-    <input v-model="formValues.remote" type="checkbox" true-value ="Yes" false-value="No">
-    <br>
-    <label for="">HTML</label>
-    <input v-model="formValues.skill" value="HTML" type="checkbox">
-
-     <label for="">CSS</label>
-    <input v-model="formValues.skill" value="CSS" type="checkbox">
-
-    <button>Submit</button>
   </form>
   </template>
 
@@ -53,10 +34,7 @@
           color: 'red',
           number: 0,
           formValues: {
-            name: '',
-            role: '',
-            remote: "No",
-            skill: [],
+            name: ''
           }
         }
       },
@@ -71,11 +49,6 @@
 
       decreaseNumber(num){
         this.number -= num
-      },
-
-      submitForm(w){
-        w.preventDefault();
-        console.log("result", this.formValues)
       }
 
     }

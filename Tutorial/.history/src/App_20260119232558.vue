@@ -14,7 +14,7 @@
   <pre>{{ JSON.stringify(formValues, null, 2) }}</pre>
 
 
-  <form action="" @submit="submitForm">
+  <form action="" @submit="submitForm(kyaw)">
     <label for="name">Name</label>
     <input v-model="formValues.name" id="name" type="text">
     <br>
@@ -73,8 +73,8 @@
         this.number -= num
       },
 
-      submitForm(w){
-        w.preventDefault();
+      submitForm(event){
+        event.preventDefault();
         console.log("result", this.formValues)
       }
 

@@ -14,7 +14,7 @@
   <pre>{{ JSON.stringify(formValues, null, 2) }}</pre>
 
 
-  <form action="" @submit="submitForm">
+  <form action="" @submit="submitForm(kyaw)">
     <label for="name">Name</label>
     <input v-model="formValues.name" id="name" type="text">
     <br>
@@ -35,7 +35,6 @@
      <label for="">CSS</label>
     <input v-model="formValues.skill" value="CSS" type="checkbox">
 
-    <button>Submit</button>
   </form>
   </template>
 
@@ -73,10 +72,7 @@
         this.number -= num
       },
 
-      submitForm(w){
-        w.preventDefault();
-        console.log("result", this.formValues)
-      }
+
 
     }
 
