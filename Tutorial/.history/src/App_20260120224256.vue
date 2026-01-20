@@ -13,8 +13,7 @@
 
 
   <h4>Volume - {{ volume }}</h4>
-  <button @click="volume +=1">Increase Volume</button>
-  <button @click="volume -=1">Decrease Volume</button>
+  <button @click="volume +=2">Increase Volume</button>
 
   <pre>{{ JSON.stringify(formValues, null, 2) }}</pre>
 
@@ -115,13 +114,6 @@
         console.log("result", this.formValues)
       }
 
-    },
-    watch: {
-      volume(value){
-        if (value == 3){
-          alert("Alert");
-        }
-      }
     }
 
   }

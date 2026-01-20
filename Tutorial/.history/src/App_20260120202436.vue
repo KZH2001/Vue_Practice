@@ -11,11 +11,6 @@
   <button @click="decreaseNumber(1)">Decrease 1</button>
   <button @click="decreaseNumber(5)">Decrease 5</button>
 
-
-  <h4>Volume - {{ volume }}</h4>
-  <button @click="volume +=1">Increase Volume</button>
-  <button @click="volume -=1">Decrease Volume</button>
-
   <pre>{{ JSON.stringify(formValues, null, 2) }}</pre>
 
 
@@ -42,10 +37,6 @@
 
     <button>Submit</button>
   </form>
-
-
-  <!-- <di>Total - {{ items.reduce((total,curr)=> (total =  total + curr.price),0) }}</di> -->
-   <div>Total - {{ items.reduce((total,curr) => (total += curr.price),0) }}</div>
   </template>
 
   <style scoped>
@@ -74,27 +65,26 @@
               price: 300
               },
                {
-              id: 2,  
+              id: 1,  
               firstName: "Rye",
-              price: 1300
+              price: 300
               },
                {
-              id: 3,  
+              id: 1,  
               firstName: "Crt",
-              price: 21030
+              price: 300
               },
                {
-              id: 4,  
-              firstName: "Cxz",
-              price: 3120
+              id: 1,  
+              firstName: "Cx",
+              price: 300
               },
                {
-              id: 5,  
-              firstName: "Yte",
-              price: 3200
+              id: 1,  
+              firstName: "Kyz",
+              price: 300
               },
-            ],
-            volume: 0,
+            ]
         }
       },
       methods: {
@@ -115,13 +105,6 @@
         console.log("result", this.formValues)
       }
 
-    },
-    watch: {
-      volume(value){
-        if (value == 3){
-          alert("Alert");
-        }
-      }
     }
 
   }

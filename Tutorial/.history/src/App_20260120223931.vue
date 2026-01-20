@@ -12,9 +12,7 @@
   <button @click="decreaseNumber(5)">Decrease 5</button>
 
 
-  <h4>Volume - {{ volume }}</h4>
-  <button @click="volume +=1">Increase Volume</button>
-  <button @click="volume -=1">Decrease Volume</button>
+  
 
   <pre>{{ JSON.stringify(formValues, null, 2) }}</pre>
 
@@ -93,8 +91,7 @@
               firstName: "Yte",
               price: 3200
               },
-            ],
-            volume: 0,
+            ]
         }
       },
       methods: {
@@ -115,13 +112,6 @@
         console.log("result", this.formValues)
       }
 
-    },
-    watch: {
-      volume(value){
-        if (value == 3){
-          alert("Alert");
-        }
-      }
     }
 
   }

@@ -14,7 +14,7 @@
 
   <h4>Volume - {{ volume }}</h4>
   <button @click="volume +=1">Increase Volume</button>
-  <button @click="volume -=1">Decrease Volume</button>
+  <button></button>
 
   <pre>{{ JSON.stringify(formValues, null, 2) }}</pre>
 
