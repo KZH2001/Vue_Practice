@@ -1,5 +1,6 @@
 
-
+  
+  
   <template>
   <h3>The total reusult is {{ add(2,3,4) }}</h3>
   <h3>{{ number  }}</h3>
@@ -53,6 +54,8 @@
   <label for="">Email</label>
   <input v-model="person.email" type="email">
  
+
+  <Greet></Greet>
  </template>
 
   <style scoped>
@@ -60,7 +63,13 @@
   </style>
 
   <script >
+
+import Greet  from './components/Greet.vue';
     export default{
+
+      components: {
+        Greet,
+      },
 
       
       data(){
