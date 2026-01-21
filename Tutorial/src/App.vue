@@ -55,7 +55,12 @@
   <input v-model="person.email" type="email">
  
 
+  <Greet name="Bruce" heroName="Mike" age="32"></Greet>
+  <Greet name="Clark" heroName="John"></Greet>
+  <Greet name="Diana" heroName="Son"></Greet>
   <Greet></Greet>
+  <hr>
+  <Article name="Kyaw 12" :age="23"></Article>
  </template>
 
   <style scoped>
@@ -65,10 +70,12 @@
   <script >
 
 import Greet  from './components/Greet.vue';
+import Article from './components/Article.vue';
     export default{
 
       components: {
         Greet,
+        Article,
       },
 
       
