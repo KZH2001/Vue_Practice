@@ -103,7 +103,7 @@
             ],
             person: {
           name: "Kyx",
-          email: "kyaw@gmail.com",
+          age: 21,
             },
             volume: 0,
 
@@ -134,13 +134,6 @@
         if (value == 3){
           alert("Alert");
         }
-      },
-
-      person: {
-        handler(newValue){
-          console.log (`Hello ${newValue.name} and ${newValue.email}`)
-        },
-        deep: true,
       }
     }
 

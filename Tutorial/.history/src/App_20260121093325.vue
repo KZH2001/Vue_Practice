@@ -103,7 +103,7 @@
             ],
             person: {
           name: "Kyx",
-          email: "kyaw@gmail.com",
+          age: 21,
             },
             volume: 0,
 
@@ -137,8 +137,10 @@
       },
 
       person: {
-        handler(newValue){
-          console.log (`Hello ${newValue.name} and ${newValue.email}`)
+        handler(new Vue({
+          
+        })){
+          console.log (`Hello ${name} and ${email}`)
         },
         deep: true,
       }

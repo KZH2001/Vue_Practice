@@ -138,7 +138,7 @@
 
       person: {
         handler(newValue){
-          console.log (`Hello ${newValue.name} and ${newValue.email}`)
+          console.log (`Hello ${newname} and ${email}`)
         },
         deep: true,
       }

@@ -46,14 +46,9 @@
 
   <!-- <di>Total - {{ items.reduce((total,curr)=> (total =  total + curr.price),0) }}</di> -->
    <div>Total - {{ items.reduce((total,curr) => (total += curr.price),0) }}</div>
+  </template>
 
-   <label for="">Name</label>
-  <input v-model="person.name" type="text">
-<br>
-  <label for="">Email</label>
-  <input v-model="person.email" type="email">
- 
- </template>
+  
 
   <style scoped>
 
@@ -101,13 +96,7 @@
               price: 3200
               },
             ],
-            person: {
-          name: "Kyx",
-          email: "kyaw@gmail.com",
-            },
             volume: 0,
-
-            
         }
       },
       methods: {
@@ -134,13 +123,6 @@
         if (value == 3){
           alert("Alert");
         }
-      },
-
-      person: {
-        handler(newValue){
-          console.log (`Hello ${newValue.name} and ${newValue.email}`)
-        },
-        deep: true,
       }
     }
 

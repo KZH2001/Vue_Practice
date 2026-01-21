@@ -103,7 +103,7 @@
             ],
             person: {
           name: "Kyx",
-          email: "kyaw@gmail.com",
+          em: 21,
             },
             volume: 0,
 
@@ -138,7 +138,7 @@
 
       person: {
         handler(newValue){
-          console.log (`Hello ${newValue.name} and ${newValue.email}`)
+          console.log (`Hello ${name} and ${email}`)
         },
         deep: true,
       }

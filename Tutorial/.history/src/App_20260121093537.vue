@@ -140,7 +140,7 @@
         handler(newValue){
           console.log (`Hello ${newValue.name} and ${newValue.email}`)
         },
-        deep: true,
+        immmediate: true,
       }
     }
 
