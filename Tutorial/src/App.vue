@@ -73,6 +73,10 @@
   <hr>
 
   <ComponentC></ComponentC>
+  <hr>
+
+  <button @click="showPopup = true">Show</button>
+  <Popup v-show="showPopup" @close="showPopup = false"></Popup>
 </template>
 
 <style scoped></style>
@@ -80,13 +84,14 @@
 <script>
 import Greet from "./components/Greet.vue";
 import Article from "./components/Article.vue";
-import ComponentE from "./components/ComponentE.vue";
 import ComponentC from "./components/ComponentC.vue";
+import Popup  from "./components/Popup.vue";
 export default {
   components: {
     Greet,
     Article,
     ComponentC,
+    Popup,
   },
 
   data() {
@@ -94,6 +99,7 @@ export default {
       name: "Superman",
       color: "red",
       number: 0,
+      showPopup: false,
       formValues: {
         name: "",
         role: "",
