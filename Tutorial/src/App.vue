@@ -82,11 +82,42 @@
   <ComponentC></ComponentC>
   <hr>
 
+<!-- Card  Slot-->
+  <!-- <Card content="Card content 1"></Card>
+  <Card content="Card content 2 12"></Card> -->
+  <Card>
+    <h2>Hello this is slot</h2>
+  </Card>
+
+  <Card>
+    <h3>Hello </h3>
+  </Card>
+<hr>
+ 
+ <!-- Card slot with name -->
+  <Card>
+  
+      <template v-slot:header>
+        <h3>This is header</h3>
+      </template>
+
+      <template v-slot:content>
+        <h3>This is content</h3>
+      </template>
+
+      <template v-slot:footer>
+        <h4>This is footer</h4>
+      </template>
+
+  </Card>
 </template>
+
+
 
 <style scoped></style>
 
 <script>
+import Card from "./components/Card.vue";
 import Greet from "./components/Greet.vue";
 import Article from "./components/Article.vue";
 import ComponentC from "./components/ComponentC.vue";
@@ -97,6 +128,7 @@ export default {
     Article,
     ComponentC,
     Popup,
+    Card,
   },
 
   data() {
