@@ -1,5 +1,12 @@
 <template>
-  <h3>The total reusult is {{ add(2, 3, 4) }}</h3>
+
+  <!-- Popup -->
+  <button @click="showPopup = true">Show</button>
+  <Popup v-show="showPopup" @close="closePopup"></Popup>
+  <!-- Popup -->
+
+  <hr>
+  <h3>The total result is {{ add(2, 3, 4) }}</h3>
   <h3>{{ number }}</h3>
 
   <h3 v-once>{{ name }}</h3>
@@ -75,8 +82,6 @@
   <ComponentC></ComponentC>
   <hr>
 
-  <button @click="showPopup = true">Show</button>
-  <Popup v-show="showPopup" @close="showPopup = false"></Popup>
 </template>
 
 <style scoped></style>
@@ -144,6 +149,12 @@ export default {
     add(a, b, c) {
       return a + b + c;
     },
+
+     closePopup(name){
+        this.showPopup = false
+        console.log('name',name)
+      },
+
 
     increaseNumber(num) {
       this.number += num;
