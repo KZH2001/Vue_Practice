@@ -110,11 +110,30 @@
       </template>
 
   </Card>
+
+  <hr>
+
+  <NameList>
+    <template v-slot:default="slotProps">
+
+      <h3>{{ slotProps.firstName09 }}</h3>
+    </template>
+  </NameList>
+
+  <hr>
+<h4>App Component Text</h4>
+  <ChildStyles></ChildStyles>
 </template>
 
 
 
-<style scoped></style>
+
+
+<style scoped>
+h4{
+  color:red;
+}
+</style>
 
 <script>
 import Card from "./components/Card.vue";
@@ -122,6 +141,8 @@ import Greet from "./components/Greet.vue";
 import Article from "./components/Article.vue";
 import ComponentC from "./components/ComponentC.vue";
 import Popup  from "./components/Popup.vue";
+import NameList from "./components/NameList.vue";
+import ChildStyles from "./components/ChildStyles.vue";
 export default {
   components: {
     Greet,
@@ -129,6 +150,8 @@ export default {
     ComponentC,
     Popup,
     Card,
+    NameList,
+    ChildStyles
   },
 
   data() {
