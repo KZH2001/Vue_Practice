@@ -123,6 +123,16 @@
   <hr>
 <h4>App Component Text</h4>
   <ChildStyles></ChildStyles>
+  <hr>
+
+  <!-- Dynamic Component, Menu  -->
+  <button @click="isTab = 'TabA'">Tab A</button>
+  <button @click="isTab = 'TabB'">Tab B</button>
+  <button @click="isTab = 'TabC'">Tab C</button>
+
+<keep-alive>
+<component :is="isTab"></component>
+</keep-alive>
 </template>
 
 
@@ -143,6 +153,9 @@ import ComponentC from "./components/ComponentC.vue";
 import Popup  from "./components/Popup.vue";
 import NameList from "./components/NameList.vue";
 import ChildStyles from "./components/ChildStyles.vue";
+import TabA from "./components/TabA.vue";
+import TabB from "./components/TabB.vue";
+import TabC from "./components/TabC.vue";
 export default {
   components: {
     Greet,
@@ -151,11 +164,15 @@ export default {
     Popup,
     Card,
     NameList,
-    ChildStyles
+    ChildStyles,
+    TabA,
+    TabB,
+    TabC,
   },
 
   data() {
     return {
+      isTab: 'TabA',
       name: "Superman",
       color: "red",
       number: 0,
