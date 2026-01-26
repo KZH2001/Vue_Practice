@@ -133,7 +133,13 @@
 <keep-alive>
 <component :is="isTab"></component>
 </keep-alive>
+
+<hr>
+<!-- api -->
+ <PostList></PostList>
 </template>
+
+
 
 
 
@@ -156,6 +162,7 @@ import ChildStyles from "./components/ChildStyles.vue";
 import TabA from "./components/TabA.vue";
 import TabB from "./components/TabB.vue";
 import TabC from "./components/TabC.vue";
+import PostList from "./components/PostList.vue";
 export default {
   components: {
     Greet,
@@ -168,6 +175,7 @@ export default {
     TabA,
     TabB,
     TabC,
+    PostList,
   },
 
   data() {
