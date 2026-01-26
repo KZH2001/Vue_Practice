@@ -138,6 +138,11 @@
 <!-- api -->
  <PostList></PostList>
  <CreatePost></CreatePost>
+ <hr>
+
+ <!-- Hooks -->
+  <HooksCreate></HooksCreate>
+  <HooksPost></HooksPost>
 </template>
 
 
@@ -165,6 +170,8 @@ import TabB from "./components/TabB.vue";
 import TabC from "./components/TabC.vue";
 import PostList from "./components/PostList.vue";
 import CreatePost from "./components/CreatePost.vue";
+import HooksCreate from "./components/HooksCreate.vue";
+import HooksPost from "./components/HooksPost.vue";
 
 export default {
   components: {
@@ -180,6 +187,8 @@ export default {
     TabC,
     PostList,
     CreatePost,
+    HooksCreate,
+    HooksPost
   },
 
   data() {
