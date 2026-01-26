@@ -137,6 +137,7 @@
 <hr>
 <!-- api -->
  <PostList></PostList>
+ <CreatePost></CreatePost>
 </template>
 
 
@@ -163,6 +164,8 @@ import TabA from "./components/TabA.vue";
 import TabB from "./components/TabB.vue";
 import TabC from "./components/TabC.vue";
 import PostList from "./components/PostList.vue";
+import CreatePost from "./components/CreatePost.vue";
+
 export default {
   components: {
     Greet,
@@ -176,6 +179,7 @@ export default {
     TabB,
     TabC,
     PostList,
+    CreatePost,
   },
 
   data() {
