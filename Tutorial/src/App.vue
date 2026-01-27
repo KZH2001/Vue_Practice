@@ -143,6 +143,8 @@
  <!-- Hooks -->
   <HooksCreate></HooksCreate>
   <HooksPost></HooksPost>
+  <hr>
+  <TemplateRef></TemplateRef>
 </template>
 
 
@@ -172,6 +174,7 @@ import PostList from "./components/PostList.vue";
 import CreatePost from "./components/CreatePost.vue";
 import HooksCreate from "./components/HooksCreate.vue";
 import HooksPost from "./components/HooksPost.vue";
+import TemplateRef from "./components/TemplateRef.vue";
 
 export default {
   components: {
@@ -188,7 +191,8 @@ export default {
     PostList,
     CreatePost,
     HooksCreate,
-    HooksPost
+    HooksPost,
+    TemplateRef,
   },
 
   data() {
