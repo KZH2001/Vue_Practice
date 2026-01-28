@@ -147,6 +147,8 @@
   <TemplateRef></TemplateRef>
   <hr>
   <DemoOne></DemoOne>
+  <hr>
+  <Vmodel></Vmodel>
 </template>
 
 
@@ -178,6 +180,7 @@ import HooksCreate from "./components/HooksCreate.vue";
 import HooksPost from "./components/HooksPost.vue";
 import TemplateRef from "./components/TemplateRef.vue";
 import DemoOne from "./components/DemoOne.vue";
+import Vmodel from "./components/Vmodel.vue";
 
 export default {
   components: {
@@ -197,6 +200,7 @@ export default {
     HooksPost,
     TemplateRef,
     DemoOne,
+    Vmodel,
   },
 
   data() {
