@@ -145,6 +145,8 @@
   <HooksPost></HooksPost>
   <hr>
   <TemplateRef></TemplateRef>
+  <hr>
+  <DemoOne></DemoOne>
 </template>
 
 
@@ -175,6 +177,7 @@ import CreatePost from "./components/CreatePost.vue";
 import HooksCreate from "./components/HooksCreate.vue";
 import HooksPost from "./components/HooksPost.vue";
 import TemplateRef from "./components/TemplateRef.vue";
+import DemoOne from "./components/DemoOne.vue";
 
 export default {
   components: {
@@ -193,6 +196,7 @@ export default {
     HooksCreate,
     HooksPost,
     TemplateRef,
+    DemoOne,
   },
 
   data() {
